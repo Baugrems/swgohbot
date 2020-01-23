@@ -42,9 +42,9 @@ async def on_message(message):
     	return
     mcont = message.content.lower()
     if mcont == 'hello there':
-       message.channel.send_message("General Kenobi!")
+       message.send("General Kenobi!")
     if message.author.name == 'shadowwolf':
-        message.channel.send_message(message.content)
+        message.send(message.content)
 
 # When bot loads, do this stuff.
 @bot.event

@@ -2,6 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from discord.utils import get
+from discord import Game
 
 TOKEN = os.environ['ENV_TOKEN']
 
@@ -23,6 +24,7 @@ async def test(context):
 # When bot loads, do this stuff.
 @bot.event
 async def on_ready():
+    await bot.change_presence(game=Game(name="Galaxy of Heroes"))
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)

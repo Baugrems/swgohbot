@@ -19,7 +19,13 @@ async def test(context):
 async def wonder(context):
     msg = ":emoji_12:"
     await bot.commands.send_message(context.channel, msg)
-    
+
+@bot.command()
+async def nerf(context):
+    msg = "No u. You no good, scruffy-looking, nerf-herder!"
+    await bot.commands.send_message(context.channel, msg)
+
+
 # WHEN A NEW MEMBER JOINS THE SERVER
 # bot.get_channel('665042600096432139') WELCOME CHANNEL ID
 @bot.event

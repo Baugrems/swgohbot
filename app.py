@@ -30,7 +30,7 @@ async def nerf(context):
 @bot.event
 async def on_member_join(member):
     msg = 'Hello There, {0.mention}! Please set your discord name to match your SWGOH name. '.format(member)
-    await context.send(msg)
+    await bot.commands.send_message(bot.get_channel('665042600096432139'), msg)
 
   #These trigger on any message. Not just commands.
 @bot.event
@@ -42,7 +42,7 @@ async def on_message(message):
     	return
     mcont = message.content.lower()
     if mcont.startswith('hello there'):
-       context.send("General Kenobi!")
+       bot.commands.send_message(message.channel, "General Kenobi!")
 
 # When bot loads, do this stuff.
 @bot.event

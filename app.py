@@ -15,7 +15,11 @@ async def test(context):
     embed=discord.Embed(title="Hello!", url="https://google.com", type="rich", description="Bot testing")
     await context.send(embed=embed)
 
-@bot.command()
+@bot.command(name="I wonder",
+               description="Provides the wonder emoji",
+               brief="Wonder?",
+               aliases=["Wonder", "shadowwolf", "wonder?", "Wonder?"],
+               pass_context=True)
 async def wonder(context):
     msg = "<:emoji_12:660581303367761920>"
     await context.send(msg)

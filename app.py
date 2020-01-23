@@ -17,7 +17,7 @@ async def test(context):
 
 @bot.command()
 async def wonder(context):
-    msg = ":emoji_12:"
+    msg = "<:emoji_12:660581303367761920>"
     await context.send(msg)
 
 @bot.command()

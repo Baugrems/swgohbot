@@ -37,19 +37,19 @@ async def on_member_join(member):
     await bot.commands.send_message(bot.get_channel('665042600096432139'), msg)
 
   #These trigger on any message. Not just commands.
-@bot.event
-async def on_message(message):
+# @bot.event
+# async def on_message(message):
     # we do not want the bot to reply to itself
     # We also want to make sure it checks for commands first
-    await bot.process_commands(message)
-    if message.author == bot.user:
-    	return
-    mcont = message.content.lower()
-    if 'hello there' in mcont:
-        msg = "General Kenobi!"
-        message.channel.send(msg)
-    if message.author.name == 'shadowwolf':
-        message.channel.send(message.content)
+    # await bot.process_commands(message)
+    # if message.author == bot.user:
+    # 	return
+    # mcont = message.content.lower()
+    # if 'hello there' in mcont:
+    #     msg = "General Kenobi!"
+    #     message.channel.send(msg)
+    # if message.author.name == 'shadowwolf':
+    #     message.channel.send(message.content)
 
 # When bot loads, do this stuff.
 @bot.event

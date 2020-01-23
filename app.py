@@ -1,5 +1,6 @@
 import os
 import discord
+import asyncio
 from discord.ext import commands
 from discord.utils import get
 from discord import Game
@@ -24,7 +25,8 @@ async def test(context):
 # When bot loads, do this stuff.
 @bot.event
 async def on_ready():
-    await bot.change_presence(game=Game(name="Galaxy of Heroes"))
+    game = Game("Galaxy of Heroes")
+    await bot.change_presence(status=discord.Status.idle, activity=game)
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)

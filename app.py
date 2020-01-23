@@ -45,9 +45,9 @@ async def on_message(message):
     if message.author == bot.user:
     	return
     mcont = message.content.lower()
-    if mcont == 'hello there':
-        msg = "General Kenobi!")
-       message.channel.send(msg)
+    if 'hello there' in mcont:
+        msg = "General Kenobi!"
+        message.channel.send(msg)
     if message.author.name == 'shadowwolf':
         message.channel.send(message.content)
 

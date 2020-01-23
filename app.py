@@ -42,7 +42,7 @@ async def on_message(message):
     	return
     mcont = message.content.lower()
     if mcont.startswith('hello there'):
-       message.channel.sendMessage("General Kenobi!")
+       message.channel.send_message("General Kenobi!")
 
 # When bot loads, do this stuff.
 @bot.event

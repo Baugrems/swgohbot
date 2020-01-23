@@ -14,10 +14,11 @@ async def test(context):
     await context.send(embed=embed)
 
 # WHEN A NEW MEMBER JOINS THE SERVER
+# bot.get_channel('665042600096432139') WELCOME CHANNEL ID
 @bot.event
 async def on_member_join(member):
 	msg = 'Hello There, {0.mention}! Please set your discord name to match your SWGOH name. '.format(member)
-	await bot.send_message(bot.get_channel('665042600096432139'), msg)
+	await bot.say(msg)
 
 # When bot loads, do this stuff.
 @bot.event

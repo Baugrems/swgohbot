@@ -15,12 +15,17 @@ async def test(context):
     embed=discord.Embed(title="Hello!", url="https://google.com", type="rich", description="Bot testing")
     await context.send(embed=embed)
 
+@bot.command()
+async def wonder(context):
+    msg = ":emoji_12:"
+    await bot.commands.send_message(context.channel, msg)
+    
 # WHEN A NEW MEMBER JOINS THE SERVER
 # bot.get_channel('665042600096432139') WELCOME CHANNEL ID
 @bot.event
 async def on_member_join(member):
     msg = 'Hello There, {0.mention}! Please set your discord name to match your SWGOH name. '.format(member)
-    await bot.commands.say(msg)
+    await bot.commands.send_message(bot.get_channel('665042600096432139'), msg)
 
   #These trigger on any message. Not just commands.
 @bot.event
@@ -32,7 +37,7 @@ async def on_message(message):
     	return
     mcont = message.content.lower()
     if mcont.startswith('hello there'):
-        bot.commands.say("General Kenobi!")
+        bot.commands.send_message(message.channel, "General Kenobi!")
 
 # When bot loads, do this stuff.
 @bot.event
